@@ -12,7 +12,10 @@ export const ThemeContext: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [theme, setTheme] = useState<string>(
-    localStorage.getItem("THEME")
+    window !== undefined ?
+    localStorage.getItem("THEME") || "light"
+    :
+    "light"
   );
 
   useEffect(() => {
