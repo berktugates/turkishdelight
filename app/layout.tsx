@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "berktug's portfolio",
   description: "the turkish delight 🇹🇷",
+  icons:{
+    icon:"/me.ico"
+  }
 };
 
 export default function RootLayout({
