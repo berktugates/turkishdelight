@@ -13,17 +13,18 @@ export const ThemeContext: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [theme, setTheme] = useState<string>("light");
   useEffect(() => {
+    if (theme) {
+      localStorage.setItem("THEME", theme);
+    }
+  }, [theme]);
+  
+  useEffect(() => {
     const storedTheme = localStorage.getItem("THEME");
     if (storedTheme) {
       setTheme(storedTheme);
     }
   }, []);
 
-  useEffect(() => {
-    if (theme) {
-      localStorage.setItem("THEME", theme);
-    }
-  }, [theme]);
 
   const toggleTheme = (): void => {
     setTheme((prev) => (prev == "light" ? "dark" : "light"));
