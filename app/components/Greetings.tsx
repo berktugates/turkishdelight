@@ -8,6 +8,7 @@ const Greetings: React.FC = () => {
   const context = useContext(Tcontext);
   if (!context) return null;
   const { theme } = context;
+  const MotionImage = motion(Image);
   return (
     <>
       <div id="greetings" className="flex flex-row items-center my-4">
@@ -36,7 +37,9 @@ const Greetings: React.FC = () => {
             and enjoys creating.
           </p>
         </div>
-        <Image
+        <MotionImage
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           src={img}
           width={100}
           className={`rounded-2xl aspect ${
