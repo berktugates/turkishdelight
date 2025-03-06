@@ -10,7 +10,9 @@ import Skills from "./components/Skills";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
-  const { theme } = useContext(Tcontext);
+  const context = useContext(Tcontext);
+  if (!context) return null;
+  const { theme } = context;
   return (
     <>
       <div

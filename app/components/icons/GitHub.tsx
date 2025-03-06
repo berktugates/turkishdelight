@@ -1,11 +1,15 @@
 import { Tcontext } from "@/store/context/ThemeContext";
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
 const GitHub: React.FC = () => {
-  const {theme} =  useContext(Tcontext);
+  const context = useContext(Tcontext);
+  if (!context) return null;
+  const { theme } = context;
   return (
     <a
-      className={`inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full ${theme == "light" ? "" : "text-white"}`}
+      className={`inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full ${
+        theme == "light" ? "" : "text-white"
+      }`}
       data-state="closed"
       href="https://github.com/berktugates"
       target="_blank"

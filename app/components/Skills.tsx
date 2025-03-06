@@ -3,7 +3,9 @@ import { Tcontext } from "@/store/context/ThemeContext";
 import { skills } from "@/constants/Skills";
 
 const Skills: React.FC = () => {
-  const { theme } = useContext(Tcontext);
+  const context = useContext(Tcontext);
+  if (!context) return null;
+  const { theme } = context;
   return (
     <>
       <div id="skills" className="my-4">
@@ -18,7 +20,9 @@ const Skills: React.FC = () => {
           {skills.map((skill, index) => (
             <span
               key={index}
-              className={`px-2.5 py-1 text-xs text-center font-semibold rounded-md ${theme == "light" ? "text-white bg-black" : "text-black bg-white"}`}
+              className={`px-2.5 py-1 text-xs text-center font-semibold rounded-md ${
+                theme == "light" ? "text-white bg-black" : "text-black bg-white"
+              }`}
             >
               {skill.name}
             </span>

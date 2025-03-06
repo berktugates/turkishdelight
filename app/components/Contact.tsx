@@ -3,7 +3,9 @@ import { Tcontext } from "@/store/context/ThemeContext";
 import X from "./icons/X";
 
 const Contact: React.FC = () => {
-  const { theme } = useContext(Tcontext);
+  const context = useContext(Tcontext);
+  if (!context) return null;
+  const { theme } = context;
   return (
     <>
       <div id="contact" className="mt-16 mb-4 flex flex-col items-center">
@@ -22,7 +24,7 @@ const Contact: React.FC = () => {
           >
             Want to chat? Feel free to shoot me a DM on{" "}
             <X href={"https://x.com/karoyildizi"} /> with a clear question, and
-            I'll get back to you whenever I can. You can also reach me via{" "}
+            I&apos;ll get back to you whenever I can. You can also reach me via{" "}
             <a
               href="mailto:berktugberke@icloud.com"
               className="underline text-black"

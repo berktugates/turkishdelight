@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import { Tcontext } from "@/store/context/ThemeContext";
 
 const About: React.FC = () => {
-  const { theme } = useContext(Tcontext);
+  const context = useContext(Tcontext);
+  if (!context) return null;
+  const { theme } = context;
   return (
     <>
       <div id="about" className="my-4">
@@ -32,7 +34,7 @@ const About: React.FC = () => {
               theme == "light" ? "text-black" : "text-white"
             }`}
           >
-            full-stack developer
+            full-stack software engineer
           </span>
           . I love coding, learning new things, and sharing my knowledge, which
           is why{" "}

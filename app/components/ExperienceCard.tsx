@@ -8,7 +8,9 @@ interface IExperienceCard {
 }
 
 const ExperienceCard: React.FC<IExperienceCard> = ({ experience }) => {
-  const { theme } = useContext(Tcontext);
+  const context = useContext(Tcontext);
+  if (!context) return null;
+  const { theme } = context;
   return (
     <>
       <div

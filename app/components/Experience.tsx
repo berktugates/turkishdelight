@@ -4,7 +4,9 @@ import { experiences } from "@/constants/Experiences";
 import ExperienceCard from "./ExperienceCard";
 
 const Experience: React.FC = () => {
-  const { theme } = useContext(Tcontext);
+  const context = useContext(Tcontext);
+  if (!context) return null;
+  const { theme } = context;
   return (
     <>
       <div id="work-experience" className="my-4">

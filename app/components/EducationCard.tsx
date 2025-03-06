@@ -8,7 +8,9 @@ interface IEducationCard {
 }
 
 const EducationCard: React.FC<IEducationCard> = ({ education }) => {
-  const { theme } = useContext(Tcontext);
+  const context = useContext(Tcontext);
+  if (!context) return null;
+  const { theme } = context;
   return (
     <>
       <div id="education-card" className="flex justify-between items-center">

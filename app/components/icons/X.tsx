@@ -3,11 +3,13 @@ import React, { useContext } from "react";
 
 interface X {
   href: string;
-  isNavbar: boolean;
+  isNavbar?: boolean;
 }
 
 const X: React.FC<X> = ({ href, isNavbar }) => {
-  const { theme } = useContext(Tcontext);
+  const context = useContext(Tcontext);
+  if (!context) return null;
+  const { theme } = context;
   return (
     <>
       <a
