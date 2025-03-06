@@ -1,4 +1,6 @@
-import {ThemeProvider} from "@/store/context/ThemeProvider";
+"use client";
+import { useContext } from "react";
+import { Tcontext } from "@/store/context/ThemeContext";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
@@ -8,21 +10,23 @@ import Skills from "./components/Skills";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
+  const { theme } = useContext(Tcontext);
   return (
     <>
-      <ThemeProvider>
-        <div id="root" className="h-screen my-2">
-          <div id="content" className="flex flex-col max-w-xl mx-auto p-6">
-            <Navbar />
-            <Greetings />
-            <About />
-            <Experience />
-            <Education />
-            <Skills />
-            <Contact />
-          </div>
+      <div
+        id="root"
+        className={` ${theme == "light" ? "bg-white" : "bg-black"}`}
+      >
+        <div id="content" className={`flex flex-col max-w-xl mx-auto p-6 `}>
+          <Navbar />
+          <Greetings />
+          <About />
+          <Experience />
+          <Education />
+          <Skills />
+          <Contact />
         </div>
-      </ThemeProvider>
+      </div>
     </>
   );
 }

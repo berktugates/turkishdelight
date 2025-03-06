@@ -1,15 +1,19 @@
-import React from "react";
+import { Tcontext } from "@/store/context/ThemeContext";
+import React, { useContext } from "react";
 
 interface X {
-  href:string;
-  isNavbar:boolean;
+  href: string;
+  isNavbar: boolean;
 }
 
-const X: React.FC<X> = ({href, isNavbar}) => {
+const X: React.FC<X> = ({ href, isNavbar }) => {
+  const { theme } = useContext(Tcontext);
   return (
     <>
       <a
-        className="inline-flex items-center text-black justify-center whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full"
+        className={`${
+          theme == "light" ? "text-black" : "text-white"
+        } inline-flex items-center justify-center whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full`}
         data-state="closed"
         href={href}
         target="_blank"
@@ -17,7 +21,7 @@ const X: React.FC<X> = ({href, isNavbar}) => {
         <svg
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
-          className={isNavbar ? "size-6": "size-4"}
+          className={isNavbar ? "size-6" : "size-4"}
         >
           <title>X</title>
           <path

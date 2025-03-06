@@ -1,12 +1,14 @@
-import { IExperience } from "@/models/Experience";
+import React, { useContext } from "react";
 import Image from "next/image";
-import React from "react";
+import { Tcontext } from "@/store/context/ThemeContext";
+import { IExperience } from "@/models/Experience";
 
 interface IExperienceCard {
-    experience : IExperience,
+  experience: IExperience;
 }
 
 const ExperienceCard: React.FC<IExperienceCard> = ({ experience }) => {
+  const { theme } = useContext(Tcontext);
   return (
     <>
       <div
@@ -18,16 +20,34 @@ const ExperienceCard: React.FC<IExperienceCard> = ({ experience }) => {
             src={experience.image}
             width={120}
             height={100}
-            className="rounded-full object-scale-down w-12 h-12"
+            className={`rounded-full object-scale-down w-12 h-12 ${
+              theme == "light" ? "" : "border border-white"
+            }`}
             alt="bbt"
           />
           <div id="work-title">
-            <h1 className="text-sm font-semibold">{experience.company}</h1>
-            <h1 className="text-xs text-gray-600">{experience.title}</h1>
+            <h1
+              className={`text-sm font-semibold ${
+                theme == "light" ? "text-black" : "text-white"
+              }`}
+            >
+              {experience.company}
+            </h1>
+            <h1
+              className={`text-xs ${
+                theme == "light" ? "text-gray-600" : "text-gray-400"
+              }`}
+            >
+              {experience.title}
+            </h1>
           </div>
         </div>
         <div id="work-date">
-          <h1 className="text-sm text-gray-600">
+          <h1
+            className={`text-sm ${
+              theme == "light" ? "text-gray-600" : "text-gray-400"
+            }`}
+          >
             {experience.startDate} - {experience.endDate}
           </h1>
         </div>

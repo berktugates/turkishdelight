@@ -1,6 +1,8 @@
-import React from "react";
+import { Tcontext } from "@/store/context/ThemeContext";
+import React, { useContext } from "react";
 
 const LinkedIn: React.FC = () => {
+  const { theme } = useContext(Tcontext);
   return (
     <a
       className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full"
@@ -11,7 +13,7 @@ const LinkedIn: React.FC = () => {
       <svg
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
-        className="size-6"
+        className={`size-6 ${theme == "light" ? "" : "text-white"}`}
       >
         <title>LinkedIn</title>
         <path
