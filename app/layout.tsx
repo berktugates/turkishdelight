@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeContext } from "@/store/context/ThemeContext";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,9 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "berktug's portfolio",
   description: "the turkish delight 🇹🇷",
-  icons:{
-    icon:"/me.ico"
-  }
+  icons: {
+    icon: "/me.ico",
+  },
 };
 
 export default function RootLayout({
@@ -31,7 +32,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeContext>{children}</ThemeContext>
+        <ThemeContext>
+          {children}
+          <Analytics />
+        </ThemeContext>
       </body>
     </html>
   );
