@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
   const { theme } = context;
   return (
     <>
-      <div id="contact" className="mt-16 mb-4 flex flex-col items-center">
+      <div id="contact" className="mt-12 mb-4 flex flex-col items-center">
         <h2
           className={`text-2xl font-bold tracking-tighter sm:text-5xl ${
             theme == "light" ? "text-black" : "text-white"

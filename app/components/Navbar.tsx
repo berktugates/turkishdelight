@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
   const context = useContext(Tcontext);
   if (!context) return null;
   const { theme, toggleTheme } = context;
+
   return (
     <>
       <div

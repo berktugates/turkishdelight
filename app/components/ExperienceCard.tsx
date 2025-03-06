@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import Image from "next/image";
 import { Tcontext } from "@/store/context/ThemeContext";
 import { IExperience } from "@/models/Experience";
+import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 
 interface IExperienceCard {
   experience: IExperience;
@@ -11,6 +13,7 @@ const ExperienceCard: React.FC<IExperienceCard> = ({ experience }) => {
   const context = useContext(Tcontext);
   if (!context) return null;
   const { theme } = context;
+  const Icon = motion(ChevronRight);
   return (
     <>
       <div
@@ -29,11 +32,19 @@ const ExperienceCard: React.FC<IExperienceCard> = ({ experience }) => {
           />
           <div id="work-title">
             <h1
-              className={`text-sm font-semibold ${
+              className={`text-sm font-semibold flex items-center ${
                 theme == "light" ? "text-black" : "text-white"
               }`}
             >
-              {experience.company}
+              {experience.company}{" "}
+              <a href="https://bbtbilisim.com" target="_blank">
+                <Icon
+                  size={18}
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  whileTap={{ scale: 1.2 }}
+                />
+              </a>
             </h1>
             <h1
               className={`text-xs ${

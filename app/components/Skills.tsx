@@ -21,8 +21,10 @@ const Skills: React.FC = () => {
             <span
               key={index}
               className={`px-2.5 py-1 text-xs text-center font-semibold rounded-md ${
-                theme == "light" ? "text-white bg-black" : "text-black bg-white"
-              }`}
+                theme == "light"
+                  ? "text-white bg-black"
+                  : "text-black bg-white"
+              } hover:scale-110 hover:duration-300`}
             >
               {skill.name}
             </span>
