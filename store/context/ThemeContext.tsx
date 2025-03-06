@@ -11,13 +11,10 @@ export const Tcontext = createContext<ITheme | undefined>(undefined);
 export const ThemeContext: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [theme, setTheme] = useState<string>("light");
-  useEffect(() => {
-    if (theme) {
-      localStorage.setItem("THEME", theme);
-    }
-  }, [theme]);
-  
+  const [theme, setTheme] = useState<string>(
+    localStorage.getItem("THEME")
+  );
+
   useEffect(() => {
     const storedTheme = localStorage.getItem("THEME");
     if (storedTheme) {
@@ -25,10 +22,13 @@ export const ThemeContext: React.FC<{ children: ReactNode }> = ({
     }
   }, []);
 
-
   const toggleTheme = (): void => {
     setTheme((prev) => (prev == "light" ? "dark" : "light"));
   };
+
+  useEffect(() => {
+    localStorage.setItem("THEME", theme);
+  }, [theme]);
 
   return (
     <>
