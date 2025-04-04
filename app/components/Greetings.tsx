@@ -3,6 +3,7 @@ import { Tcontext } from "@/store/context/ThemeContext";
 import Image from "next/image";
 import img from "../../public/me.png";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 const Greetings: React.FC = () => {
   const context = useContext(Tcontext);
@@ -38,6 +39,7 @@ const Greetings: React.FC = () => {
           </p>
         </div>
         <MotionImage
+        onClick={()=> toast("If you clicked, you found real talent, not just 'clickbait'")}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           src={img}
