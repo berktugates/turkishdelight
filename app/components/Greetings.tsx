@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Tcontext } from "@/store/context/ThemeContext";
 import Image from "next/image";
-import img from "../../public/me.jpg";
+import img from "../../public/me.png";
 import { motion } from "framer-motion";
 
 const Greetings: React.FC = () => {
@@ -43,7 +43,7 @@ const Greetings: React.FC = () => {
           src={img}
           width={100}
           className={`rounded-2xl aspect ${
-            theme == "light" ? "" : "border border-white"
+            theme == "light" ? "" : ""
           }`}
           alt="berktug's photo"
         />

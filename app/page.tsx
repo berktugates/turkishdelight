@@ -17,13 +17,13 @@ export default function Home() {
     <>
       <div
         id="root"
-        className={` ${theme == "light" ? "bg-white" : "bg-black"}`}
+        className={`h-screen ${theme == "light" ? "bg-white" : "bg-black"}`}
       >
         <div id="content" className={`flex flex-col max-w-xl mx-auto p-6 `}>
           <Navbar />
           <Greetings />
           <About />
-          <Experience />
+          {/* <Experience /> */}
           <Education />
           <Skills />
           <Contact />
