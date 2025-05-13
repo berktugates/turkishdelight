@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
         <div id="social" className="flex gap-x-4">
           <GitHub />
           <LinkedIn />
-          <X href="https://x.com/karoyildizi" isNavbar={true} />
+          <X href="https://x.com/plazadilberi" isNavbar={true} />
         </div>
         <div id="light-mode" onClick={() => toggleTheme()}>
           <Light />
