@@ -1,15 +1,11 @@
 import React, { useContext } from "react";
 import { Tcontext } from "@/store/context/ThemeContext";
-import Image from "next/image";
-import img from "../../public/me.png";
 import { motion } from "framer-motion";
-import { toast } from "react-toastify";
 
 const Greetings: React.FC = () => {
   const context = useContext(Tcontext);
   if (!context) return null;
   const { theme } = context;
-  const MotionImage = motion(Image);
   return (
     <>
       <div id="greetings" className="flex flex-row items-center my-4">
