@@ -38,7 +38,7 @@ const Greetings: React.FC = () => {
             and enjoys creating.
           </p>
         </div>
-        <MotionImage
+        {/* <MotionImage
         onClick={()=> toast("If you clicked, you found real talent, not just 'clickbait'")}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -48,7 +48,7 @@ const Greetings: React.FC = () => {
             theme == "light" ? "" : ""
           }`}
           alt="berktug's photo"
-        />
+        /> */}
       </div>
     </>
   );

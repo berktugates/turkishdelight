@@ -52,13 +52,20 @@ const EducationCard: React.FC<IEducationCard> = ({ education }) => {
             </h1>
           </div>
         </div>
-        <div id="education-date">
+        <div id="education-date" className="flex text-xs">
           <h1
-            className={`text-sm ${
+            className={`${
               theme == "light" ? "text-gray-600" : "text-gray-400"
             }`}
           >
-            {education.startDate} - {education.endDate}
+            {education.startDate}
+          </h1>
+          <h1
+            className={`${
+              theme == "light" ? "text-gray-600" : "text-gray-400"
+            }`}
+          >
+             {"-"}{education.endDate}
           </h1>
         </div>
       </div>
