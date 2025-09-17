@@ -1,0 +1,25 @@
+"use client";
+import Navbar from "@/components/common/navbar";
+import Footer from "@/components/common/footer";
+import { Banner } from "@/components/organism/banner";
+import { Tiles } from "@/components/ui/tiles";
+import { WhyUs } from "@/components/organism/whyus";
+import { TechStack } from "@/components/organism/techstack";
+import { Faq } from "@/components/organism/faq";
+
+export default function Home() {
+  return (
+    <Tiles className="px-4 py-4">
+      <main className="lg:max-w-4xl lg:mx-auto">
+      <Navbar />
+        <Banner />
+        <section id="content" className="flex flex-col gap-y-8 mt-12">
+          <WhyUs />
+          <TechStack />
+          <Faq />
+        </section>
+      </main>
+      <Footer />
+    </Tiles>
+  );
+}
