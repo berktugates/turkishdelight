@@ -30,7 +30,7 @@ const MinusIcon = ({ color = "currentColor" }: { color?: string }) => (
 );
 
 const SearchIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#e91e63" strokeOpacity="0.5">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
   </svg>
 );
@@ -141,7 +141,7 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
 
         {searchable && (
           <div className="relative max-w-md mx-auto">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#e91e63]/50">
               <SearchIcon />
             </div>
             <input
@@ -150,7 +150,7 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className={cn(
-                "w-full pl-12 pr-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-4 transition-all duration-300 transform hover:scale-105 placeholder:text-gray-400",
+                "w-full pl-12 pr-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-4 transition-all duration-300 transform hover:scale-105 placeholder:text-[#e91e63]/40",
                 colors.border,
                 colors.searchBg,
                 colors.focusRing
@@ -230,8 +230,7 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
 
         {filteredFaqs.length === 0 && searchTerm && (
           <div className="text-center py-12">
-            <HelpIcon />
-            <p className="text-gray-600 text-lg">Arama kriterlerinize uygun SSS bulunamadı.</p>
+            <p className="text-[#e91e63]/60 text-lg">Arama kriterlerinize uygun SSS bulunamadı.</p>
           </div>
         )}
       </div>

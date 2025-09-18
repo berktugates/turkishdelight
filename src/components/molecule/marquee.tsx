@@ -136,14 +136,14 @@ export const Marquee = () => {
 
   return (
     <div
-    ref={containerRef}
-    className="group flex overflow-hidden p-2 [--gap:2rem] [gap:var(--gap)] flex-row rounded-xl border border-[#e91e63]/15 hover:border-[#f39c12]/25 bg-gradient-to-r from-[#e91e63]/3 to-[#f39c12]/3 transition-colors"
-    onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}
-  >
+      ref={containerRef}
+      className="w-full max-w-full flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row rounded-xl border border-[#e91e63]/15 hover:border-[#f39c12]/25 bg-gradient-to-r from-[#e91e63]/3 to-[#f39c12]/3 transition-colors"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
     <div
       ref={contentRef}
-      className="flex shrink-0 justify-around [gap:var(--gap)] flex-row"
+      className="flex shrink-0 justify-around [gap:var(--gap)] flex-row min-w-0"
     >
         {Array(4)
           .fill(0)
@@ -151,33 +151,33 @@ export const Marquee = () => {
             <div
               key={i}
               ref={i === 0 ? singleContentBlockRef : null}
-              className="flex gap-8"
+              className="flex gap-4 md:gap-8"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-white/10 rounded-xl">
+              <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl">
                 <ReactLogo />
               </div>
-              <div className="flex items-center justify-center w-16 h-16 bg-white/10 rounded-xl">
+              <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl">
                 <TypeScriptLogo />
               </div>
-              <div className="flex items-center justify-center w-16 h-16 bg-white/10 rounded-xl">
+              <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl">
                 <JavaScriptLogo />
               </div>
-              <div className="flex items-center justify-center w-16 h-16 bg-white/10 rounded-xl">
+              <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl">
                 <SupabaseLogo />
               </div>
-              <div className="flex items-center justify-center w-16 h-16 bg-white/10 rounded-xl">
+              <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl">
                 <PostgreSQLLogo />
               </div>
-              <div className="flex items-center justify-center w-16 h-16 bg-white/10 rounded-xl">
+              <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl">
                 <MongoDBLogo />
               </div>
-              <div className="flex items-center justify-center w-16 h-16 bg-white/10 rounded-xl">
+              <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl">
                 <NestJSLogo />
               </div>
-              <div className="flex items-center justify-center w-16 h-16 bg-white/10 rounded-xl">
+              <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl">
                 <TailwindCSSLogo />
               </div>
-              <div className="flex items-center justify-center w-16 h-16 bg-white/10 rounded-xl">
+              <div className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-xl">
                 <GitLogo />
               </div>
             </div>

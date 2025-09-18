@@ -6,11 +6,11 @@ export interface FAQItem {
 export const sampleFaqs: FAQItem[] = [
   {
     question: "Hangi teknolojileri kullanıyorsunuz?",
-    answer: "Modern web geliştirme için React, Next.js, TypeScript, Tailwind CSS ve diğer güncel teknolojileri kullanıyorum. Mobile geliştirme için React Native, backend için Node.js, NestJS kullanıyorum. Projelerinizin ihtiyaçlarına göre en uygun teknoloji yığınını seçiyorum."
+    answer: "Modern web geliştirme için React, Next.js, TypeScript, Tailwind CSS ve diğer güncel teknolojileri kullanıyorum. Mobil geliştirme için React Native, backend için Node.js, NestJS kullanıyorum. Projelerinizin ihtiyaçlarına göre en uygun teknoloji yığınını seçiyorum."
   },
   {
-    question: "Mobile uygulama geliştiriyor musunuz?",
-    answer: "Evet, iOS ve Android için performanslı mobile uygulamalar geliştiriyorum. React Native kullanarak hem iOS hem de Android platformları için tek kod tabanında uygulama geliştirebiliyorum."
+    question: "Mobil uygulama geliştiriyor musunuz?",
+    answer: "Evet, iOS ve Android için performanslı mobil uygulamalar geliştiriyorum. React Native kullanarak hem iOS hem de Android platformları için tek kod tabanında uygulama geliştirebiliyorum."
   },
   {
     question: "Backend ve API geliştirme hizmetiniz var mı?",
@@ -18,7 +18,7 @@ export const sampleFaqs: FAQItem[] = [
   },
   {
     question: "Proje teslim süreleri nasıl belirleniyor?",
-    answer: "Proje teslim süreleri, projenin karmaşıklığına, özellik sayısına ve müşteri gereksinimlerine göre belirlenir. Web projeleri için 2-8 hafta, mobile uygulamalar için 4-12 hafta, backend sistemleri için 3-10 hafta sürebilir. Detaylı bir analiz sonrasında gerçekçi bir zaman çizelgesi sunuyorum."
+    answer: "Proje teslim süreleri, projenin karmaşıklığına, özellik sayısına ve müşteri gereksinimlerine göre belirlenir. Web projeleri için 2-8 hafta, mobil uygulamalar için 4-12 hafta, backend sistemleri için 3-10 hafta sürebilir. Detaylı bir analiz sonrasında gerçekçi bir zaman çizelgesi sunuyorum."
   },
   {
     question: "Proje sonrası destek sağlıyor musunuz?",
@@ -26,10 +26,10 @@ export const sampleFaqs: FAQItem[] = [
   },
   {
     question: "Fiyatlandırma nasıl yapılıyor?",
-    answer: "Fiyatlandırma, projenin kapsamına, karmaşıklığına ve geliştirme süresine göre belirlenir. Web siteleri, mobile uygulamalar ve backend sistemleri için farklı fiyat aralıkları bulunmaktadır. Detaylı bir keşif toplantısı sonrasında şeffaf bir fiyat teklifi sunuyorum."
+    answer: "Fiyatlandırma, projenin kapsamına, karmaşıklığına ve geliştirme süresine göre belirlenir. Web siteleri, mobil uygulamalar ve backend sistemleri için farklı fiyat aralıkları bulunmaktadır. Detaylı bir keşif toplantısı sonrasında şeffaf bir fiyat teklifi sunuyorum."
   },
   {
     question: "Responsive tasarım dahil mi?",
-    answer: "Evet, tüm projelerimizde mobil, tablet ve masaüstü cihazlarda mükemmel görünüm sağlayan responsive tasarım standart olarak dahildir. Progressive Web App (PWA) özelliği ile web uygulamalarınızı mobile benzeri deneyim sunacak şekilde geliştirebilirim."
+    answer: "Evet, tüm projelerimizde mobil, tablet ve masaüstü cihazlarda mükemmel görünüm sağlayan responsive tasarım standart olarak dahildir. Progressive Web App (PWA) özelliği ile web uygulamalarınızı mobil benzeri deneyim sunacak şekilde geliştirebilirim."
   }
 ];
