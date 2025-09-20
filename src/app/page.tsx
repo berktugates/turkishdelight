@@ -6,20 +6,30 @@ import { Tiles } from "@/components/ui/tiles";
 import { WhyUs } from "@/components/organism/whyus";
 import { TechStack } from "@/components/organism/techstack";
 import { Faq } from "@/components/organism/faq";
+import { Dock } from "@/components/ui/dock-two";
+import {dockItems} from "@/constants/dock"
 
 export default function Home() {
   return (
-    <Tiles className="px-4 py-4">
-      <main className="lg:max-w-4xl lg:mx-auto">
-      <Navbar />
-        <Banner />
-        <section id="content" className="flex flex-col gap-y-8 mt-12">
-          <WhyUs />
-          <TechStack />
-          <Faq />
-        </section>
-      </main>
-      <Footer />
-    </Tiles>
+    <>
+      <Tiles className="px-4 py-4">
+        <main className="lg:max-w-4xl lg:mx-auto">
+          <Navbar />
+          <Banner />
+          <section id="content" className="flex flex-col gap-y-8 mt-12">
+            <WhyUs />
+            <TechStack />
+            <Faq />
+          </section>
+        </main>
+        <Footer />
+      </Tiles>
+      
+      <div className="fixed bottom-4 left-0 right-0 z-50 pointer-events-none">
+        <div className="pointer-events-auto">
+          <Dock items={dockItems} />
+        </div>
+      </div>
+    </>
   );
 }
