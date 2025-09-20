@@ -25,7 +25,7 @@ export default function Home() {
         <Footer />
       </Tiles>
       
-      <div className="fixed bottom-4 left-0 right-0 z-50 pointer-events-none">
+      <div className="fixed left-4 top-1/2 -translate-y-1/2 z-50 pointer-events-none">
         <div className="pointer-events-auto">
           <Dock items={dockItems} />
         </div>

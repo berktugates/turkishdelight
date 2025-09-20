@@ -57,7 +57,7 @@ const DockIconButton = React.forwardRef<HTMLButtonElement, DockIconButtonProps>(
       >
         <Icon className="w-5 h-5 text-foreground" />
         <span className={cn(
-          "absolute -top-8 left-1/2 -translate-x-1/2",
+          "absolute left-full top-1/2 -translate-y-1/2 ml-2",
           "px-2 py-1 rounded text-xs",
           "bg-popover text-popover-foreground",
           "opacity-0 group-hover:opacity-100",
@@ -74,17 +74,19 @@ DockIconButton.displayName = "DockIconButton"
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
   ({ items, className }, ref) => {
     return (
-      <div ref={ref} className={cn("w-full h-64 flex items-center justify-center p-2", className)}>
-        <div className="w-full max-w-4xl h-64 rounded-2xl flex items-center justify-center relative">
+      <div ref={ref} className={cn("h-full flex items-center justify-center p-2", className)}>
+        <div className="flex items-center justify-center relative">
           <motion.div
             initial="initial"
             animate="animate"
             variants={floatingAnimation}
             className={cn(
-              "flex items-center gap-1 p-2 rounded-2xl",
-              "backdrop-blur-lg border shadow-lg",
-              "bg-background/90 border-border",
-              "hover:shadow-xl transition-shadow duration-300"
+              "flex flex-col items-center gap-1 p-2 rounded-2xl",
+              "backdrop-blur-lg shadow-lg",
+              "bg-background/90",
+              "border border-transparent bg-gradient-to-br from-border/40 via-border/20 to-border/40 bg-clip-border",
+              "hover:shadow-xl transition-all duration-300",
+              "hover:from-border/60 hover:via-border/30 hover:to-border/60"
             )}
           >
             {items.map((item) => (
