@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://turkishdelight.dev"),
   alternates: {
-    canonical: "/",
+    canonical: "https://turkishdelight.dev/",
     languages: {
       "en-US": "/",
       "tr-TR": "/tr",
