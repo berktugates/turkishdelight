@@ -1,17 +1,80 @@
 import Link from "next/link";
+import { Menu, X, Mail } from "lucide-react";
+import { Dock } from "@/components/ui/dock-two";
+import { dockItems } from "@/constants/dock";
 
-export default function Navbar() {
+interface NavbarProps {
+  isDockOpen: boolean;
+  setIsDockOpen: (open: boolean) => void;
+}
+
+export default function Navbar({ isDockOpen, setIsDockOpen }: NavbarProps) {
+  // Mobile dock items (mail first, then dock items)
+  const mobileDockItems = [
+    {
+      icon: Mail,
+      label: "İletişime Geç",
+      href: "mailto:berktugberke@icloud.com",
+    },
+    ...dockItems,
+  ];
+
   return (
-    <nav className="flex items-center justify-between">
+    <nav className="flex items-center justify-between relative overflow-visible">
       <Link
         className="text-3xl font-semibold bg-gradient-to-r from-[#e91e63] via-[#ff6b35] to-[#f39c12] bg-clip-text text-transparent"
         href={"/"}
       >
-        turkish<br/>delight.
+        turkish
+        <br />
+        delight.
       </Link>
-      <a href="mailto:berktugberke@icloud.com" className="bg-gradient-to-br from-[#ff6b35] to-[#e91e63] px-4 py-2 text-white rounded-md hover:shadow-lg hover:scale-105 transition-all duration-300 inline-block">
-        İletişime Geç
-      </a>
+
+      <div className="flex items-center gap-3 relative">
+        {/* Mobile Dock Button - md ve daha küçük ekranlarda */}
+        <div className="lg:hidden relative">
+          <button
+            onClick={() => setIsDockOpen(!isDockOpen)}
+            className="bg-gradient-to-br from-[#ff6b35] to-[#e91e63] p-2 text-white rounded-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+            title={isDockOpen ? "Menü'yü Kapat" : "Menü'yü Aç"}
+          >
+            {isDockOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+
+          {isDockOpen && (
+            <div className="absolute top-full right-1/2 translate-x-1/2 mt-2 z-50 min-w-0 max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg">
+              <div className="bg-background/95 border border-border/50 rounded-lg p-1 shadow-lg">
+                <div className="flex flex-col gap-1">
+                  {mobileDockItems.map((item, index) => (
+                    <div key={item.label}>
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center p-3 rounded hover:bg-secondary transition-colors"
+                        title={item.label}
+                      >
+                        <item.icon className="w-5 h-5" />
+                      </a>
+                      {index === 0 && (
+                        <div className="mx-2 h-px bg-border/30"></div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Desktop Contact Button - lg ve daha büyük ekranlarda */}
+        <a
+          href="mailto:berktugberke@icloud.com"
+          className="hidden lg:inline-block bg-gradient-to-br from-[#ff6b35] to-[#e91e63] px-4 py-2 text-white rounded-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+        >
+          İletişime Geç
+        </a>
+      </div>
     </nav>
   );
 }
