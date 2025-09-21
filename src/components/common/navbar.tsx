@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Menu, X, Mail } from "lucide-react";
-import { Dock } from "@/components/ui/dock-two";
 import { dockItems } from "@/constants/dock";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "@/components/atom/language-selector";
 
 interface NavbarProps {
   isDockOpen: boolean;
@@ -9,12 +10,13 @@ interface NavbarProps {
 }
 
 export default function Navbar({ isDockOpen, setIsDockOpen }: NavbarProps) {
-  // Mobile dock items (mail first, then dock items)
+  const { t } = useTranslation();
+  
   const mobileDockItems = [
     {
       icon: Mail,
-      label: "İletişime Geç",
-      href: "mailto:berktugberke@icloud.com",
+      label: t("navbar.contact"),
+      href: "mailto:freelancerberktug@gmail.com",
     },
     ...dockItems,
   ];
@@ -31,12 +33,13 @@ export default function Navbar({ isDockOpen, setIsDockOpen }: NavbarProps) {
       </Link>
 
       <div className="flex items-center gap-3 relative">
-        {/* Mobile Dock Button - md ve daha küçük ekranlarda */}
+        <LanguageSelector />
+        
         <div className="lg:hidden relative">
           <button
             onClick={() => setIsDockOpen(!isDockOpen)}
             className="bg-gradient-to-br from-[#ff6b35] to-[#e91e63] p-2 text-white rounded-md hover:shadow-lg hover:scale-105 transition-all duration-300"
-            title={isDockOpen ? "Menü'yü Kapat" : "Menü'yü Aç"}
+            title={isDockOpen ? t("navbar.menuClose") : t("navbar.menuOpen")}
           >
             {isDockOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -67,12 +70,11 @@ export default function Navbar({ isDockOpen, setIsDockOpen }: NavbarProps) {
           )}
         </div>
 
-        {/* Desktop Contact Button - lg ve daha büyük ekranlarda */}
         <a
-          href="mailto:berktugberke@icloud.com"
+          href="mailto:freelancerberktug@gmail.com"
           className="hidden lg:inline-block bg-gradient-to-br from-[#ff6b35] to-[#e91e63] px-4 py-2 text-white rounded-md hover:shadow-lg hover:scale-105 transition-all duration-300"
         >
-          İletişime Geç
+{t("navbar.contact")}
         </a>
       </div>
     </nav>

@@ -1,35 +1,27 @@
 export interface FAQItem {
-  question: string;
-  answer: string;
+  id: string;
 }
 
 export const sampleFaqs: FAQItem[] = [
   {
-    question: "Hangi teknolojileri kullanıyorsunuz?",
-    answer: "Modern web geliştirme için React, Next.js, TypeScript, Tailwind CSS ve diğer güncel teknolojileri kullanıyorum. Mobil geliştirme için React Native, backend için Node.js, NestJS kullanıyorum. Projelerinizin ihtiyaçlarına göre en uygun teknoloji yığınını seçiyorum."
+    id: "technologies"
   },
   {
-    question: "Mobil uygulama geliştiriyor musunuz?",
-    answer: "Evet, iOS ve Android için performanslı mobil uygulamalar geliştiriyorum. React Native kullanarak hem iOS hem de Android platformları için tek kod tabanında uygulama geliştirebiliyorum."
+    id: "mobile"
   },
   {
-    question: "Backend ve API geliştirme hizmetiniz var mı?",
-    answer: "Tabii ki! Node.js, NestJS, Express.js ile güçlü backend sistemleri geliştiriyorum. RESTful API, GraphQL, mikroservis mimarisi, veritabanı tasarımı (PostgreSQL, MongoDB) ve cloud entegrasyonları (AWS, Google Cloud) konularında uzmanım."
+    id: "backend"
   },
   {
-    question: "Proje teslim süreleri nasıl belirleniyor?",
-    answer: "Proje teslim süreleri, projenin karmaşıklığına, özellik sayısına ve müşteri gereksinimlerine göre belirlenir. Web projeleri için 2-8 hafta, mobil uygulamalar için 4-12 hafta, backend sistemleri için 3-10 hafta sürebilir. Detaylı bir analiz sonrasında gerçekçi bir zaman çizelgesi sunuyorum."
+    id: "delivery"
   },
   {
-    question: "Proje sonrası destek sağlıyor musunuz?",
-    answer: "Evet, tüm projelerimiz için proje teslimi sonrası destek sağlıyorum. Ayrıca uzun vadeli bakım ve geliştirme hizmetleri de sunuyorum."
+    id: "support"
   },
   {
-    question: "Fiyatlandırma nasıl yapılıyor?",
-    answer: "Fiyatlandırma, projenin kapsamına, karmaşıklığına ve geliştirme süresine göre belirlenir. Web siteleri, mobil uygulamalar ve backend sistemleri için farklı fiyat aralıkları bulunmaktadır. Detaylı bir keşif toplantısı sonrasında şeffaf bir fiyat teklifi sunuyorum."
+    id: "pricing"
   },
   {
-    question: "Responsive tasarım dahil mi?",
-    answer: "Evet, tüm projelerimizde mobil, tablet ve masaüstü cihazlarda mükemmel görünüm sağlayan responsive tasarım standart olarak dahildir. Progressive Web App (PWA) özelliği ile web uygulamalarınızı mobil benzeri deneyim sunacak şekilde geliştirebilirim."
+    id: "responsive"
   }
 ];

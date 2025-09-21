@@ -33,10 +33,6 @@ const floatingAnimation = {
   }
 }
 
-const mobileFloatingAnimation = {
-  initial: { y: 0 },
-  animate: { y: 0 }
-}
 
 const DockIconButton = React.forwardRef<HTMLButtonElement, DockIconButtonProps>(
   ({ icon: Icon, label, href, onClick, className }, ref) => {

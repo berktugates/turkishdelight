@@ -2,11 +2,11 @@
 
 import React, { useState, forwardRef } from "react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 interface FAQItem {
   index?: number;
-  question: string;
-  answer: string;
+  id: string;
 }
 
 interface FAQProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -16,7 +16,6 @@ interface FAQProps extends React.HTMLAttributes<HTMLDivElement> {
   colorScheme?: "pink" | "orange" | "yellow";
 }
 
-// --- SVG ICONS ---
 const PlusIcon = ({ color = "currentColor" }: { color?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke={color}>
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -53,6 +52,7 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
     },
     ref
   ) => {
+    const { t } = useTranslation();
     const [openItems, setOpenItems] = useState(new Set<number>());
     const [searchTerm, setSearchTerm] = useState("");
 
@@ -65,8 +65,8 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
 
     const filteredFaqs = faqs.filter(
       (faq) =>
-        faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+        t(`faq.questions.${faq.id}.question`).toLowerCase().includes(searchTerm.toLowerCase()) ||
+        t(`faq.questions.${faq.id}.answer`).toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     const colorSchemes = {
@@ -135,7 +135,7 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
             </h2>
           </div>
           <p className="bg-gradient-to-r from-[#e91e63] to-[#f39c12] bg-clip-text text-transparent text-lg max-w-2xl mx-auto">
-            Yaygın soruların yanıtlarını bulun. Herhangi bir soruya tıklayarak genişletin.
+            {t("faq.subtitle")}
           </p>
         </div>
 
@@ -146,7 +146,7 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
             </div>
             <input
               type="text"
-              placeholder="SSS'leri ara..."
+              placeholder={t("faq.searchPlaceholder")}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className={cn(
@@ -155,7 +155,7 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
                 colors.searchBg,
                 colors.focusRing
               )}
-              aria-label="SSS'leri Ara"
+              aria-label={t("faq.searchLabel")}
             />
           </div>
         )}
@@ -187,7 +187,7 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
                         colors.textColor,
                         colors.textHover
                       )}>
-                        {faq.question}
+                        {t(`faq.questions.${faq.id}.question`)}
                       </h3>
                     </div>
                     <div
@@ -218,7 +218,7 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
                         "leading-relaxed text-base md:text-lg animate-fadeIn",
                         colors.answerText
                       )}>
-                        {faq.answer}
+                        {t(`faq.questions.${faq.id}.answer`)}
                       </p>
                     </div>
                   </div>
@@ -230,7 +230,7 @@ const FAQ = forwardRef<HTMLDivElement, FAQProps>(
 
         {filteredFaqs.length === 0 && searchTerm && (
           <div className="text-center py-12">
-            <p className="text-[#e91e63]/60 text-lg">Arama kriterlerinize uygun SSS bulunamadı.</p>
+            <p className="text-[#e91e63]/60 text-lg">{t("faq.noResults")}</p>
           </div>
         )}
       </div>
