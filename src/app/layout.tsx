@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://turkishdelight.dev"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://turkishdelight.dev"),
   alternates: {
     canonical: "https://turkishdelight.dev/",
     languages: {
@@ -100,8 +100,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "AtWUerObjkczmqWFPKHj_8LYKMMrIjXumso_EvqTlOU",
-    yandex: "your-yandex-verification-code",
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
 };
 
