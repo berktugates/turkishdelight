@@ -112,6 +112,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        <meta name="google-site-verification" content="AtWUerObjkczmqWFPKHj_8LYKMMrIjXumso_EvqTlOU" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full m-0 p-0`}
       >
