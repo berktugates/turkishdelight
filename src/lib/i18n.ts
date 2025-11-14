@@ -25,7 +25,7 @@ const resources = {
         "experience": {
           "title": "Experience",
           "description": "I have been active in web and mobile development for years and have signed many successful projects.",
-          "value": "5+ Years"
+          "value": "2+ Years"
         },
         "projects": {
           "title": "Completed Projects",
@@ -121,7 +121,7 @@ const resources = {
         "experience": {
           "title": "Erfahrung",
           "description": "Ich bin seit Jahren im Web- und Mobile-Development tätig und habe viele erfolgreiche Projekte umgesetzt.",
-          "value": "5+ Jahre"
+          "value": "2+ Jahre"
         },
         "projects": {
           "title": "Abgeschlossene Projekte",
@@ -217,7 +217,7 @@ const resources = {
         "experience": {
           "title": "Expérience",
           "description": "Je suis actif dans le développement web et mobile depuis des années et j'ai signé de nombreux projets réussis.",
-          "value": "5+ Ans"
+          "value": "2+ Ans"
         },
         "projects": {
           "title": "Projets terminés",
@@ -313,7 +313,7 @@ const resources = {
         "experience": {
           "title": "Esperienza",
           "description": "Sono attivo nello sviluppo web e mobile da anni e ho firmato molti progetti di successo.",
-          "value": "5+ Anni"
+          "value": "2+ Anni"
         },
         "projects": {
           "title": "Progetti completati",
@@ -409,7 +409,7 @@ const resources = {
         "experience": {
           "title": "Deneyim",
           "description": "Yıllardır web ve mobil geliştirme alanında faaliyet göstererek birçok başarılı projeye imza attım.",
-          "value": "5+ Yıl"
+          "value": "2+ Yıl"
         },
         "projects": {
           "title": "Tamamlanan Projeler",
@@ -505,7 +505,7 @@ const resources = {
         "experience": {
           "title": "Experiencia",
           "description": "He estado activo en desarrollo web y móvil durante años y he firmado muchos proyectos exitosos.",
-          "value": "5+ Años"
+          "value": "2+ Años"
         },
         "projects": {
           "title": "Proyectos completados",
@@ -601,7 +601,7 @@ const resources = {
         "experience": {
           "title": "الخبرة",
           "description": "أعمل في تطوير الويب والموبايل لسنوات ووقعت العديد من المشاريع الناجحة.",
-          "value": "5+ سنوات"
+          "value": "2+ سنوات"
         },
         "projects": {
           "title": "المشاريع المكتملة",
